@@ -1,0 +1,121 @@
+<!-- *------------------------------------- -->
+<!--* HTML IMAGE TAG  
+<!-- *---------------------------------------- -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>image</title>
+  <style>
+    body {
+      font-weight: bold;
+      background-color: #efefef;
+    }
+    img {
+      box-shadow: rgba(100, 100, 111, 1) 0px 7px 29px 0px;
+      border-radius: 8px;
+      border: 0.1px solid black;
+      max-width: 400px;
+      max-height: 300px;
+      margin: 5px;
+    }
+    .no-width-height {
+      max-width: none;
+      max-height: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML IMG TAG</h1>
+
+  <!--* First image -->
+
+  <a href="./images/man_standing.jpg" target="_blank">
+    <img src="./images/man_standing.jpg" alt="man standing on a rock." width="100%" height="100%" title="man standing on a rock." loading="lazy">
+  </a>
+
+
+
+  <!--*Second image --- making it clickable on a certain area on an image using MAP tag. -->
+
+  <img src="./images/man_standing.jpg" alt="man standing on a rock." width="100%" height="100%" title="man standing on a rock." loading="lazy" usemap="#rectangle">
+
+  <map name="rectangle">
+    <area shape="rect" coords="0,0,200,150" href="./images/rectArea1.png" alt="one forth of the original image from ((0,0) to (250,150))">
+  </map>
+
+
+  <!--* Third image --- using srcset, sizes attribute inside img tag -->
+
+  <img 
+  class="no-width-height"
+  src="./images/man_standing.jpg" 
+  alt="man standing on a rock." 
+  title="man standing on a rock." 
+  srcset="
+    ./images/man_standing-400.jpg   400w,
+    ./images/man_standing-600.jpg   600w,
+    ./images/man_standing-1000.jpg   1000w
+  "
+  sizes="
+    (max-width: 600px) 400px,
+    (max-width: 800px) 600px,
+    (max-width: 1200px) 1000px
+  "
+  >
+
+</body>
+</html>
+
+<!--TODO  Deprecated attributes of HTML Images  -->
+<!-- align, border, hspace, vspace -->
+
+<!--* What Not To Do  -->
+<!-- ❌ <img alt="image" src="penguin.jpg" />  -->
+<!-- ✅<img  alt="A Rock hopper Penguin standing on a beach."  src="penguin.jpg" /> -->
+
+<!-- *------------------------------------- -->
+<!--* INTERVIEW QUESTIONS: HTML IMAGE TAG  
+<!-- *---------------------------------------- -->
+
+<!--? 1: How would you make an image responsive using the width attribute? -->
+<!-- You can set the width attribute to a percentage value (e.g., width="100%") to make the image adjust its width based on the available space. -->
+
+<!--? 2: How do you create an image link using the <img> tag? -->
+<!-- You wrap the <img> tag with an anchor <a> tag and provide the href attribute in the <a> tag. -->
+
+<!--? 3: What's the difference between relative and absolute URLs in the href attribute? -->
+<!-- Relative URLs are URLs that are relative to the current page's URL. Absolute
+URLs are complete URLs, including the protocol (http/https) and domain. -->
+
+<!--? 4: Why is providing descriptive alt text for images important? It improves -->
+<!-- accessibility for users with visual impairments and helps search engines 
+understand image content.
+
+<!-- *------------------------------------- -->
+<!--* ADVANCED : HTML IMAGE TAG  
+<!-- *---------------------------------------- -->
+<!-- <img
+  src="./images/man_standing.jpg"
+  alt="Responsive Image"
+
+
+  if below 400 no responsive, if in-between 400-600 400image will be displayed,  if in-between 600-1000 600image will be displayed, if in-between 1000-max 1000image will be displayed.
+
+  srcset="
+    ./images/man_standing-400.jpg   400w,
+    ./images/man_standing-600.jpg   600w,
+    ./images/man_standing-1000.jpg   1000w
+  "
+
+
+  if below 600 show 400, if in-between 600-800 show 600, if in-between 800-1200 show 1000.
+  sizes="
+  
+    (max-width: 600px) 400px,
+    (max-width: 800px) 600px,
+    (max-width: 1200px) 1000px
+  "
+/> -->
